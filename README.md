@@ -9,4 +9,4 @@ Learning Point :
   - Using Segue manually
   - Using Action Segue❤️
   
-2.Applying MVC(Model-View-Controller) design pattern
+2.Applying MVC(Model-View-Controller) design pattern ❗️
