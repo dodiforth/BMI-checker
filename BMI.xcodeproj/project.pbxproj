@@ -14,6 +14,7 @@
 		3BD7E9B42A6593AB00572C72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BD7E9B32A6593AB00572C72 /* Assets.xcassets */; };
 		3BD7E9B72A6593AB00572C72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BD7E9B52A6593AB00572C72 /* LaunchScreen.storyboard */; };
 		3BD7E9BF2A65AB1700572C72 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7E9BE2A65AB1600572C72 /* SecondViewController.swift */; };
+		3BD7E9C42A69D0CB00572C72 /* BMICalculatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7E9C32A69D0CB00572C72 /* BMICalculatorManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		3BD7E9B62A6593AB00572C72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3BD7E9B82A6593AB00572C72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BD7E9BE2A65AB1600572C72 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		3BD7E9C32A69D0CB00572C72 /* BMICalculatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMICalculatorManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,14 +62,39 @@
 			children = (
 				3BD7E9AA2A6593AA00572C72 /* AppDelegate.swift */,
 				3BD7E9AC2A6593AA00572C72 /* SceneDelegate.swift */,
-				3BD7E9AE2A6593AA00572C72 /* ViewController.swift */,
-				3BD7E9BE2A65AB1600572C72 /* SecondViewController.swift */,
-				3BD7E9B02A6593AA00572C72 /* Main.storyboard */,
+				3BD7E9C02A69CF0000572C72 /* Models */,
+				3BD7E9C22A69CF2900572C72 /* Views */,
+				3BD7E9C12A69CF1F00572C72 /* Controllers */,
 				3BD7E9B32A6593AB00572C72 /* Assets.xcassets */,
 				3BD7E9B52A6593AB00572C72 /* LaunchScreen.storyboard */,
 				3BD7E9B82A6593AB00572C72 /* Info.plist */,
 			);
 			path = BMI;
+			sourceTree = "<group>";
+		};
+		3BD7E9C02A69CF0000572C72 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3BD7E9C32A69D0CB00572C72 /* BMICalculatorManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3BD7E9C12A69CF1F00572C72 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3BD7E9AE2A6593AA00572C72 /* ViewController.swift */,
+				3BD7E9BE2A65AB1600572C72 /* SecondViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3BD7E9C22A69CF2900572C72 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3BD7E9B02A6593AA00572C72 /* Main.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +171,7 @@
 				3BD7E9BF2A65AB1700572C72 /* SecondViewController.swift in Sources */,
 				3BD7E9AF2A6593AA00572C72 /* ViewController.swift in Sources */,
 				3BD7E9AB2A6593AA00572C72 /* AppDelegate.swift in Sources */,
+				3BD7E9C42A69D0CB00572C72 /* BMICalculatorManager.swift in Sources */,
 				3BD7E9AD2A6593AA00572C72 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
