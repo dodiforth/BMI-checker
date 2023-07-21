@@ -10,62 +10,70 @@ import UIKit
 struct BMICalculatorManager {
     
     // a variable to keep the track data of BMI calculation.
-    var bmi: Double?
+    private var bmi: BMI?
+    
+    // Get BMI result
+    mutating func getBMI(height: String, weight: String) -> BMI {
+        // call calculateBMI method
+        calculateBMI(height: height, weight: weight)
+        // return BMI
+        return bmi ?? BMI(value: 0.0, matchAdvice: "Error Occurred", matchColor: UIColor.white)
+    }
+    
+    // Calculate BMI and make an instance of BMI Struct
+    mutating private func calculateBMI(height: String, weight: String) {
         
-    // BMI calculation method
-    mutating func calculateBMI(height: String, weight: String) {
         guard let h = Double(height), let w = Double(weight) else {
-            bmi = 0.0
+            bmi = BMI(value: 0.0, matchAdvice: "Error Occurred", matchColor: UIColor.white)
             return
         }
-        var bmiNumber = w / (h * h) * 10000
-//        print("BMI RESULT(반올림하기전) : \(bmi)")
-        bmi = round( bmiNumber * 10 ) / 10
-//        print("BMI RESULT(반올림한후) : \(bmi)")
-    }
-    
-    func getBMIResult() -> Double {
-        return bmi ?? 0.0
-    }
-    
-    // Get background colour method
-    func getBackbroundColour() -> UIColor {
-        guard let bmi = bmi else { return UIColor.black }
-        switch bmi {
+        
+        var bmiNum = w / (h * h) * 10000
+        bmiNum = round(bmiNum * 10) / 10
+        
+        switch bmiNum {
         case ..<18.6:
-            return UIColor(displayP3Red: 22/255, green: 231/255, blue: 207/255, alpha: 1)
+            let color = UIColor(displayP3Red: 22/255,
+                                green: 231/255,
+                                blue: 207/255,
+                                alpha: 1)
+            bmi = BMI(value: bmiNum, matchAdvice: "저체중", matchColor: color)
+            
         case 18.6..<23.0:
-            return UIColor(displayP3Red: 212/255, green: 251/255, blue: 121/255, alpha: 1)
+            let color = UIColor(displayP3Red: 212/255,
+                                green: 251/255,
+                                blue: 121/255,
+                                alpha: 1)
+            bmi = BMI(value: bmiNum, matchAdvice: "표준", matchColor: color)
+            
         case 23.0..<25.0:
-            return UIColor(displayP3Red: 218/255, green: 127/255, blue: 163/255, alpha: 1)
+            let color = UIColor(displayP3Red: 218/255,
+                                green: 127/255,
+                                blue: 163/255,
+                                alpha: 1)
+            bmi = BMI(value: bmiNum, matchAdvice: "과체중", matchColor: color)
+            
         case 25.0..<30.0:
-            return UIColor(displayP3Red: 255/255, green: 150/255, blue: 141/255, alpha: 1)
+            let color = UIColor(displayP3Red: 255/255,
+                                green: 150/255,
+                                blue: 141/255,
+                                alpha: 1)
+            bmi = BMI(value: bmiNum, matchAdvice: "중도비만", matchColor: color)
+            
         case 30.0...:
-            return UIColor(displayP3Red: 255/255, green: 100/255, blue: 78/255, alpha: 1)
+            let color = UIColor(displayP3Red: 255/255,
+                                green: 100/255,
+                                blue: 78/255,
+                                alpha: 1)
+            bmi = BMI(value: bmiNum, matchAdvice: "고도비만", matchColor: color)
+            
         default:
-            return UIColor.black
+            bmi = BMI(value: 0.0, matchAdvice: "Error Occurred", matchColor: .white)
+
         }
     }
     
-    //get string according to bmi method
-    func getBMIAdviceString() -> String {
-        guard let bmi = bmi else { return "" }
-        switch bmi{
-        case ..<18.6:
-            return "저체중"
-        case 18.6..<23.0:
-            return "표준"
-        case 23.0..<25.0:
-            return "과체중"
-        case 25.0..<30.0:
-            return "중도비만"
-        case 30.0...:
-            return "고도비만"
-        default:
-            return ""
-        }
     
-    }
 
     
 }

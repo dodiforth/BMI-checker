@@ -15,33 +15,33 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var adviceLabel: UILabel!
     @IBOutlet weak var backButton: UIButton!
     
-    var bmiNumber: Double?
-    var adviceString: String?
-    var bmiColor: UIColor?
+    // Datas that has been passed from the previous view(ViewController)
+//    var bmiNumber: Double?
+//    var adviceString: String?
+//    var bmiColor: UIColor?
+    
+    var bmi: BMI?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        makeUI()
+        
+        configureUI()
+        
+        guard let bmi = bmi else { return }
+        
+        bmiNumberLabel.text = "\(bmi.value)"
+        bmiNumberLabel.backgroundColor = bmi.matchColor
+        adviceLabel.text = bmi.matchAdvice
+        
     }
     
-    func makeUI(){
-        //make the burron's corner round
-        backButton.clipsToBounds = true
-        backButton.layer.cornerRadius = 5
-        backButton.setTitle("again", for: .normal)
-            
+    // setting up UI
+    func configureUI() {
         bmiNumberLabel.clipsToBounds = true
         bmiNumberLabel.layer.cornerRadius = 8
-        bmiNumberLabel.backgroundColor = .gray
         
-        guard let bmi = bmiNumber else { return }
-        bmiNumberLabel.text = String(bmi)
-        
-        adviceLabel.text = adviceString
-        bmiNumberLabel.backgroundColor = bmiColor
+        backButton.layer.cornerRadius = 5
     }
-    
-    
     
     @IBAction func backButtonTapped(_ sender: UIButton) {
         
