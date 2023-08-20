@@ -3,10 +3,5 @@ This is a simple BMI checking app. Learning about : Changing and Switiching betw
 
 Learning Point :
 
-1.How to switch(or jump to) bewtween the View(ViewController) and pass data and value to another view.
-  - Using only code
-  - Create an instant by code on "Storyboard"
-  - Using Segue manually
-  - Using Action Segue❤️
-  
+1.How to switch(or jump to) bewtween the View(ViewController) and pass data and value to another view(Segue).  
 2.Applying MVC(Model-View-Controller) design pattern ❗️
