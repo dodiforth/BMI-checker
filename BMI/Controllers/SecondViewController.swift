@@ -41,6 +41,7 @@ class SecondViewController: UIViewController {
         bmiNumberLabel.layer.cornerRadius = 8
         
         backButton.layer.cornerRadius = 5
+        backButton.setTitle("Back", for: .normal)
     }
     
     @IBAction func backButtonTapped(_ sender: UIButton) {

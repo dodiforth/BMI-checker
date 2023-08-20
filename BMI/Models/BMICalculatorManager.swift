@@ -37,35 +37,35 @@ struct BMICalculatorManager {
                                 green: 231/255,
                                 blue: 207/255,
                                 alpha: 1)
-            bmi = BMI(value: bmiNum, matchAdvice: "저체중", matchColor: color)
+            bmi = BMI(value: bmiNum, matchAdvice: "UNDERWEIGHT", matchColor: color)
             
         case 18.6..<23.0:
             let color = UIColor(displayP3Red: 212/255,
                                 green: 251/255,
                                 blue: 121/255,
                                 alpha: 1)
-            bmi = BMI(value: bmiNum, matchAdvice: "표준", matchColor: color)
+            bmi = BMI(value: bmiNum, matchAdvice: "NORMAL", matchColor: color)
             
         case 23.0..<25.0:
             let color = UIColor(displayP3Red: 218/255,
                                 green: 127/255,
                                 blue: 163/255,
                                 alpha: 1)
-            bmi = BMI(value: bmiNum, matchAdvice: "과체중", matchColor: color)
+            bmi = BMI(value: bmiNum, matchAdvice: "OVERWEIGHT", matchColor: color)
             
         case 25.0..<30.0:
             let color = UIColor(displayP3Red: 255/255,
                                 green: 150/255,
                                 blue: 141/255,
                                 alpha: 1)
-            bmi = BMI(value: bmiNum, matchAdvice: "중도비만", matchColor: color)
+            bmi = BMI(value: bmiNum, matchAdvice: "OBESE", matchColor: color)
             
         case 30.0...:
             let color = UIColor(displayP3Red: 255/255,
                                 green: 100/255,
                                 blue: 78/255,
                                 alpha: 1)
-            bmi = BMI(value: bmiNum, matchAdvice: "고도비만", matchColor: color)
+            bmi = BMI(value: bmiNum, matchAdvice: "EXTREMLY OBESE", matchColor: color)
             
         default:
             bmi = BMI(value: 0.0, matchAdvice: "Error Occurred", matchColor: .white)
